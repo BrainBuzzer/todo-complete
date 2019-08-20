@@ -61,7 +61,7 @@ class App extends React.Component {
 						className="new-todo"
 						placeholder="What needs to be done?"
 						autofocus
-						value={this.state.value}
+						value={this.state.newTodoValue}
 						onChange={this.handleNewTodo}
 						onKeyPress={this.handleSubmit} />
 				</header>
