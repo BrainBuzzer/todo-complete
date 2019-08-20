@@ -39,6 +39,18 @@ class App extends React.Component {
 			})
 		}
 	}
+
+	handleCheckItem = (id) => {
+		this.setState(prevState => {
+			prevState.todos.map(todo => {
+				if(todo.id === id)
+					todo.completed = !todo.completed;
+			})
+			return {
+				...prevState
+			}
+		});
+	}
 	
 	render() {
 		return (
@@ -57,7 +69,12 @@ class App extends React.Component {
 					<input id="toggle-all" className="toggle-all" type="checkbox" />
 					<label htmlFor="toggle-all">Mark all as complete</label>
 					<ul className="todo-list">
-						{this.state.todos.map(todo => <Todo key={todo.id} todo={todo} />)}
+						{this.state.todos.map(todo =>
+							<Todo
+								key={todo.id}
+								todo={todo}
+								handleCheckItem={this.handleCheckItem} />
+						)}
 					</ul>
 				</section>
 				<footer className="footer">
