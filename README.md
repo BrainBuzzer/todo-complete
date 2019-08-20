@@ -3,10 +3,10 @@
 The snippet of TODO tag that needs to be copied:
 
 ``` JSX
-    <li class={this.props.todo.completed ? 'completed' : ''}>
+    <li class="completed">
       <div class="view">
-        <input class="toggle" type="checkbox" onChange={this.props.handleCheckItem.bind(this, this.props.todo.id)} checked={this.props.todo.completed} />
-        <label>{this.props.todo.title}</label>
+        <input class="toggle" type="checkbox" checked="true" />
+        <label>Title of the class</label>
         <button class="destroy"></button>
       </div>
     </li>
